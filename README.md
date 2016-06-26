@@ -11,3 +11,6 @@ To build on Linux, clone the **baker** repository, then run: `../baker/baker -t`
 
 ### License
 The licenses are included in the source files, and are BSD style licenses.
+
+### Manual
+A formatted version of the manual page: [libtap Version 2 Programmer's Manual](https://github.com/jimbelton/libtap/wiki/libtap-Version-2-Programmer%27s-Manual)
