@@ -1,0 +1,9 @@
+libtap (2.02) stable; urgency=low
+  * DPT-1366 - Add tap_shell function
+
+ -- Jim Belton <jbelton@cisco.com>  Mon, 15 Aug 2022 16:28:42 +0000
+
+libtap (2.01) stable; urgency=low
+  * DPT-520 - Make libtap a packaged library
+
+ -- Jim Belton <jbelton@cisco.com>  Thu,  6 Aug 2020 21:14:42 +0000

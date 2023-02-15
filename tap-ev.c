@@ -14,14 +14,14 @@
 #include <string.h>
 #include "tap.h"
 
-struct TAP_EV {
+struct tap_ev {
     const void *    identifier;
     unsigned        argc;
     void **         argv;
-    struct TAP_EV * next;
+    struct tap_ev * next;
 };
 
-struct TAP_EV_QUEUE {
+struct tap_ev_queue {
     unsigned queue_count;
     tap_ev   head;
     tap_ev   tail;
@@ -31,7 +31,7 @@ struct TAP_EV_QUEUE {
  */
 const char   TAP_EV_NO_EVENT[] = "NO EVENT";
 
-static struct TAP_EV_QUEUE tap_ev_queue_default = {0, NULL, NULL};
+static struct tap_ev_queue tap_ev_queue_default = {0, NULL, NULL};
 
 const void * tap_ev_identifier(tap_ev ev) {return ev == NULL ? TAP_EV_NO_EVENT : ev->identifier;}
 unsigned     tap_ev_arg_count( tap_ev ev) {return ev->argc;                                     }
@@ -66,7 +66,7 @@ tap_ev_queue_push_vararg(tap_ev_queue queue, const char * identifier, unsigned a
     tap_ev   ev;
     unsigned i;
 
-    ev = malloc(sizeof(struct TAP_EV) + 2 * argc * sizeof(void *));
+    ev = malloc(sizeof(struct tap_ev) + 2 * argc * sizeof(void *));
     assert(ev != NULL);
     ev->identifier = identifier;
     ev->argc       = argc;
@@ -227,6 +227,6 @@ tap_ev_queue_new(void)
 {
     tap_ev_queue queue;
 
-    assert((queue = calloc(1, sizeof(struct TAP_EV_QUEUE))) != NULL && "tap_ev_queue_new failed");
+    assert((queue = calloc(1, sizeof(struct tap_ev_queue))) != NULL && "tap_ev_queue_new failed");
     return queue;
 }

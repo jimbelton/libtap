@@ -170,23 +170,23 @@ _gen_result(int type, const void * got, const void * expected,
         break;
 
     case 3:
-        ok = (int)(strcmp(got, expected) == 0);
+        ok = (int)(got != NULL && strcmp(got, expected) == 0);
         break;
 
     case 4:
-        ok = (int)(strcmp(got, expected) != 0);
+        ok = (int)(got != NULL && strcmp(got, expected) != 0);
         break;
 
     case 5:
-        ok = (int)((*cmp)(got, expected) == 0);
+        ok = (int)(got != NULL && (*cmp)(got, expected) == 0);
         break;
 
     case 6:
-        ok = (int)(strncmp(got, expected, (size_t)cmp) == 0);
+        ok = (int)(got != NULL && strncmp(got, expected, (size_t)cmp) == 0);
         break;
 
     case 7:
-        ok = (int)(strstr(got, expected) != NULL);
+        ok = (int)(got != NULL && strstr(got, expected) != NULL);
         break;
 
     default:
@@ -530,7 +530,7 @@ tap_plan(unsigned tests, unsigned flags, FILE * output)
 void
 plan_tests(unsigned int tests)
 {
-	tap_plan(tests, 0, NULL);
+    tap_plan(tests, 0, NULL);
 }
 
 int

@@ -26,4 +26,3 @@ To install libtap, run: sudo dpkg -i output/output/libtap_2.01_amd64.deb
 ## Use
 
 See the included tap.3 manual page. A formatted version of the manual page can be found here: [libtap Version 2 Programmer's Manual](https://github.com/jimbelton/libtap/wiki/libtap-Version-2-Programmer%27s-Manual)
-

@@ -1,0 +1,9 @@
+Source: libtap
+Maintainer: engineering@opendns.com
+Section: devel
+Priority: optional
+Version: 2.1
+
+Package: libtap
+Architecture: any
+Description: C unit testing library with Test Anything Protocol compatible output

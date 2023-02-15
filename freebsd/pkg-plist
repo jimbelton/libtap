@@ -1,0 +1,3 @@
+include/tap.h
+lib/libtap.a
+man/man3/tap.3.gz
