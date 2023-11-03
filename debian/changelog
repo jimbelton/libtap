@@ -1,3 +1,8 @@
+libtap (2.03) stable; urgency=low
+  * Add tap_tmpnam function
+
+ -- Jim Belton <jbelton@cisco.com>  Mon, 15 Aug 2022 16:28:42 +0000
+
 libtap (2.02) stable; urgency=low
   * DPT-1366 - Add tap_shell function
 

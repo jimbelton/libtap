@@ -303,6 +303,7 @@ const char * tap_get_test_case_name(  void);
 void         tap_set_test_case_name(  const char * name);
 void *       tap_dup(                 const void * mem, size_t size);
 char *       tap_shell(               const char * command, int * status);
+unsigned     tap_tmpnam(              const char * file_stem, char * buffer, unsigned size);
 
 unsigned     tap_ev_arg_count(        tap_ev ev);
 const void * tap_ev_arg(              tap_ev ev, const char * name);

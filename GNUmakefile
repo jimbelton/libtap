@@ -16,15 +16,15 @@ INSTALL     := install -o 0 -g 0
 LINK	    ?= cc
 LINK_FLAGS  ?= $(LFLAGS)
 LINK_OUT    ?= -o
-DST.obj     ?= tap$(EXT.obj) tap-ev$(EXT.obj) tap-util$(EXT.obj)
+DST.obj     ?= tap$(EXT.obj) tap-ev$(EXT.obj) tap-tmpnam$(EXT.obj) tap-util$(EXT.obj)
 
 .PHONY: all clean install package test
 
 all:		target target/libtap.a
 
-test:		target test/run.t test/run-tap-ev.t
-	test/run.t
-	test/run-tap-ev.t
+test:		target test/test-tap.t test/test-tap-ev.t
+	test/test-tap.t
+	test/test-tap-ev.t
 
 %$(EXT.obj):	%.c tap.h
 	$(CC) -c $(CFLAGS) -o $@ -fPIC -DPIC $*.c
