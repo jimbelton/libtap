@@ -29,6 +29,7 @@
 #ifndef __TAP_H__
 #define __TAP_H__
 
+#include <stdbool.h>
 #include <stddef.h>
 #include <stdio.h>
 
@@ -291,6 +292,7 @@ void plan_skip_all(const char *reason);
 
 #define TAP_FLAG_ON_FAILURE_EXIT 0x00000001
 #define TAP_FLAG_DEBUG           0x00000002
+#define TAP_FLAG_LINE_ON_OK      0x00000004    // tap_plan flag to add calling line numbers on oks
 
 typedef struct tap_ev       * tap_ev;
 typedef struct tap_ev_queue * tap_ev_queue;
@@ -303,7 +305,8 @@ const char * tap_get_test_case_name(  void);
 void         tap_set_test_case_name(  const char * name);
 void *       tap_dup(                 const void * mem, size_t size);
 char *       tap_shell(               const char * command, int * status);
-unsigned     tap_tmpnam(              const char * file_stem, char * buffer, unsigned size);
+bool         tap_create_file(         const char * fn, const char * data, ...) PRINTF_ATTRIBUTE(2, 3);
+char *       tap_read_file(           const char * fn, size_t * size_out);
 
 unsigned     tap_ev_arg_count(        tap_ev ev);
 const void * tap_ev_arg(              tap_ev ev, const char * name);

@@ -39,7 +39,7 @@
 #define flockfile(file)
 #define funlockfile(file)
 #include <process.h>
-#define getpid()          _getpid()
+#define getpid() _getpid()
 
 #else /* UNIX */
 #include <unistd.h>
@@ -276,7 +276,8 @@ _gen_result(int type, const void * got, const void * expected,
 
         if(!ok)
             failures--;
-    }
+    } else if (ok && (tap_flags & TAP_FLAG_LINE_ON_OK))
+        fprintf(tap_out, " (line %d)", line);
 
     fprintf(tap_out, "\n");
 

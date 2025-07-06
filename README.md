@@ -9,6 +9,10 @@ This github **libtap** project is a stand-alone version of the library that can 
 
 ## Building With Make
 
+Building the debian packages requires build-essential and debhelper be installed:
+ 1. sudo apt-get install build-essential
+ 1. sudo apt-get install dephelper
+
 Command | Description
 ------- | -----------
 make    | Build the library

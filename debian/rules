@@ -17,7 +17,7 @@ binary-arch: build
 	dh_shlibdeps
 	dh_md5sums
 	dh_fixperms
-	dh_builddeb
+	dh_builddeb -- -Zxz
 
 binary-indep: build
 
